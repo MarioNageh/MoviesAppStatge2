@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.user.moveappstage1.DetailActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbarland" />
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/DetailsFragment_ScrollView_DetailsScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:alpha=".8"
+    android:background="#000000"
+    android:layout_below="@id/toolbar">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_height="wrap_content">
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+     <FrameLayout
+         android:id="@+id/frame_for_tv_image"
+         android:layout_width="150dp"
+         android:layout_height="250dp">
+         <ImageView
+             android:layout_gravity="center"
+             android:id="@+id/Poster_Tv"
+             android:layout_width="120dp"
+             android:layout_height="220dp"
+             android:src="@mipmap/ic_launcher"
+             android:scaleType="fitXY"
+             />
+     </FrameLayout>
+
+     <LinearLayout
+         android:layout_marginTop="20dp"
+         android:layout_toRightOf="@id/frame_for_tv_image"
+         android:orientation="vertical"
+         android:id="@+id/Linear_tv_data"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <TextView
+             android:id="@+id/tv_title_txt"
+             android:textStyle="bold"
+             android:textColor="@android:color/holo_red_dark"
+             android:ellipsize="end"
+             tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+             android:maxLines="1"
+             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+
+         <LinearLayout
+             android:id="@+id/for_rate_view"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:orientation="horizontal">
+
+             <TextView
+                 android:id="@+id/rate_tv_txt"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                 android:textColor="@android:color/darker_gray"
+                 android:textSize="22sp"
+                 tools:text="7.5" />
+
+             <RatingBar
+
+                 android:id="@+id/ratingd_bar"
+                 style="?android:attr/ratingBarStyleSmall"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:layout_marginLeft="10dp"
+                 android:numStars="5"
+                 android:stepSize=".5"
+
+                 android:theme="@style/RatingBar" />
+
+             <ImageView
+                 android:onClick="Favourit"
+                 android:scaleType="center"
+                 android:id="@+id/favourit_btn"
+                 android:layout_width="50dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_favoirut_unchecked"/>
+
+         </LinearLayout>
+         <TextView
+
+             android:layout_marginTop="10dp"
+             android:id="@+id/tv_Relase_Date"
+             android:textColor="@android:color/darker_gray"
+             android:ellipsize="end"
+             tools:text="aaaaaaaaaaaaaaa"
+             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+         <TextView
+             android:layout_marginTop="10dp"
+             android:textStyle="bold"
+             android:textColor="@android:color/holo_red_dark"
+             android:ellipsize="end"
+             android:text="@string/Polt_Synopsis"
+             android:maxLines="1"
+             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>
+         <TextView
+android:layout_marginRight="4dp"
+             android:layout_marginTop="10dp"
+             android:id="@+id/tv_over_view"
+             android:textColor="@android:color/darker_gray"
+             android:ellipsize="end"
+             tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+     </LinearLayout>
+
+ </RelativeLayout>
+
+       <LinearLayout
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="10dp"
+           android:orientation="vertical"
+           android:id="@+id/Contianer_Videow"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:textStyle="bold"
+               android:textColor="@android:color/holo_red_dark"
+               android:ellipsize="end"
+               android:text="@string/Trailers"
+               android:maxLines="1"
+               android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <android.support.v7.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:id="@+id/tv_item_Videow">
+           </android.support.v7.widget.RecyclerView>
+
+           <ProgressBar
+               android:id="@+id/probar_loading_ViedowDeatilng"
+               android:layout_height="42dp"
+               android:layout_width="42dp"
+               android:layout_gravity="center"
+               android:visibility="invisible" />
+       </LinearLayout>
+
+
+       <LinearLayout
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="5dp"
+           android:orientation="vertical"
+           android:id="@+id/Contianer_Reviews"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:textStyle="bold"
+               android:textColor="@android:color/holo_red_dark"
+               android:ellipsize="end"
+               android:text="@string/Reviews"
+               android:maxLines="1"
+               android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <android.support.v7.widget.RecyclerView
+               android:layout_marginTop="3dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:id="@+id/tv_item_Reviews">
+           </android.support.v7.widget.RecyclerView>
+
+           <ProgressBar
+               android:id="@+id/probar_loading_ReviewsDeatilng"
+               android:layout_height="42dp"
+               android:layout_width="42dp"
+               android:layout_gravity="center"
+               android:visibility="invisible" />
+       </LinearLayout>
+
+
+   </LinearLayout>
+
+</ScrollView>
+
+
+</RelativeLayout>
